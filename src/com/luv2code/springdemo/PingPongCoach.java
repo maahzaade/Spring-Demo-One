@@ -13,11 +13,18 @@ public class PingPongCoach implements Coach {
 		System.out.println("Inside default constructor: PingPongCoach");
 	}
 
-	@Autowired
-	public PingPongCoach(FortuneService fortuneService) {
-		System.out.println("Inside constructor: PingPongCoach(FortuneService fortuneService)");
-		this.fortuneService = fortuneService;
+//	@Autowired
+//	public PingPongCoach(FortuneService fortuneService) {
+//		System.out.println("Inside constructor: PingPongCoach(FortuneService fortuneService)");
+//		this.fortuneService = fortuneService;
+//
+//	}
 
+//	Define a setter method
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+ 		System.out.println("Inside setter: setFortuneService(FortuneService fortuneService)");
+		this.fortuneService = fortuneService;
 	}
 
 	@Override

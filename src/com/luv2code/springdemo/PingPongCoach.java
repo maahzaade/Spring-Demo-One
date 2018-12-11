@@ -21,9 +21,16 @@ public class PingPongCoach implements Coach {
 //	}
 
 //	Define a setter method
+//	@Autowired
+//	public void setFortuneService(FortuneService fortuneService) {
+// 		System.out.println("Inside setter: setFortuneService(FortuneService fortuneService)");
+//		this.fortuneService = fortuneService;
+//	}
+
+	// Test injection with method
 	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
- 		System.out.println("Inside setter: setFortuneService(FortuneService fortuneService)");
+	public void doSomeCrazyStuff(FortuneService fortuneService) {
+		System.out.println("Inside method: doSomeCrazyStuff(FortuneService fortuneService)");
 		this.fortuneService = fortuneService;
 	}
 

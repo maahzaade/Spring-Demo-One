@@ -5,8 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import java.sql.SQLOutput;
+
 @Component
-@Scope("prototype")
 public class PingPongCoach implements Coach {
 
 	@Autowired
@@ -38,6 +41,20 @@ public class PingPongCoach implements Coach {
 //		System.out.println("Inside method: doSomeCrazyStuff(FortuneService fortuneService)");
 //		this.fortuneService = fortuneService;
 //	}
+
+
+	//define my init method
+	@PostConstruct
+	public void doMyStartupStuff(){
+		System.out.println(">> PingPongCoach: inside doMyStartupStuff() <<");
+	}
+
+
+	//define my destroy method
+	@PreDestroy
+	public void doMyCleantupStuff(){
+		System.out.println(">> PingPongCoach: inside doMyCleantupStuff() <<");
+	}
 
 	@Override
 	public String getDailyWorkout() {

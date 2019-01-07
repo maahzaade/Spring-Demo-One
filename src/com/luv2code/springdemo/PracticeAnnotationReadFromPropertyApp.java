@@ -15,10 +15,10 @@ public class PracticeAnnotationReadFromPropertyApp {
         FortuneService theFortuneService = context.getBean("readFromPropertyFortuneService", FortuneService.class);
 
         // call a method on the bean
-        System.out.println(theFortuneService.getFortune());
+        //System.out.println(theFortuneService.getFortune());
 
         // call method to get the daily fortune
-        System.out.println(theFortuneService.getDailyFortune());
+        //System.out.println(theFortuneService.getDailyFortune());
 
         // close the context
         context.close();

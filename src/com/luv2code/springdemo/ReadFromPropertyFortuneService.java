@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
 @PropertySource("classpath:com/luv2code/springdemo/resources/config/fortunes.properties")
 public class ReadFromPropertyFortuneService implements FortuneService {
@@ -23,6 +25,14 @@ public class ReadFromPropertyFortuneService implements FortuneService {
     // define a default constructor
     public ReadFromPropertyFortuneService() {
         System.out.println("Inside default constructor: ReadFromPropertyFortuneService");
+    }
+
+    //define my init method
+    @PostConstruct
+    public void doMyStartupStuff(){
+        System.out.println(">> ReadFromPropertyFortuneService: inside doMyStartupStuff() <<");
+        System.out.println(getFortune());
+        System.out.println(getDailyFortune());
     }
 
     @Override

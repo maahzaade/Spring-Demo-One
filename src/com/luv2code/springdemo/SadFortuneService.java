@@ -1,0 +1,13 @@
+package com.luv2code.springdemo;
+
+public class SadFortuneService implements FortuneService {
+    @Override
+    public String getFortune() {
+        return null;
+    }
+
+    @Override
+    public String getDailyFortune() {
+        return "Today is a sad day :(";
+    }
+}
